@@ -1,0 +1,22 @@
+| Column               | Type        | Null   | Default | Comment                                      |
+|----------------------|-------------|--------|---------|----------------------------------------------|
+| `id`                        | INT                       | No     | AUTO    | Unique identifier for the user               |
+| `firstname`          | VARCHAR(50) | No     | NULL    | Staff's first name                           |
+| `lastname`           | VARCHAR(50) | No     | NULL    | Staff's last name                            |
+| `email`              | VARCHAR(100)| No     | NULL    | Staff's email address                        |
+| `password`           | VARCHAR(255)| No     | NULL    | Hashed password for security                 |
+| `phone`              | VARCHAR(20) | No     | NULL    | Staff's phone number                         |
+| `content_type`       | INT         | No     | NULL    | Type of content associated (internal field)  |
+| `weekly_salary`      | DECIMAL(10,2)| Yes   | 0.00    | Staff's weekly salary; can be zero           |
+| `currency`           | VARCHAR(10) | No     | 'USD'   | Currency used for payment                    |
+| `roles`              | VARCHAR(255)| No     | NULL    | Staff's roles; e.g., admin, manager          |
+| `access_level`       | INT         | No     | 1       | Defines staff's access level (default 1)     |
+| `slack_member_id`    | VARCHAR(100)| Yes    | NULL    | Slack member ID for Slack integration        |
+| `telegram_username`  | VARCHAR(50) | Yes    | NULL    | Optional field for Telegram integration      |
+| `ip_restriction_enabled`| BOOLEAN  | No     | FALSE   | Enable or disable IP restriction for user    |
+| `creation_type_id`   | INT         | No     | NULL    | ID of content type selected from interface   |
+| `created_at`         | TIMESTAMP   | No     | CURRENT_TIMESTAMP | Record creation timestamp          |
+| `updated_at`         | TIMESTAMP   | Yes    | NULL    | Timestamp of last update (optional)          |
+```
+ 
+Comments: Each field has specific constraints to ensure data integrity. For instance, `email` is mandatory, while `slack_member_id` and `telegram_username` are optional to accommodate different communication tools.
